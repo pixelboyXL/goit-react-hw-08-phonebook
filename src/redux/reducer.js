@@ -52,9 +52,13 @@ const phonebookSlice = createSlice({
                 state.token = null;
                 state.isLoggedIn = false;
             })
+            .addCase(refreshUser.pending, (state) => {
+                state.isRefreshing = true;
+            })
             .addCase(refreshUser.fulfilled, (state, action) => {
-                state.user = action.payload.user;
+                state.user = action.payload;
                 state.isLoggedIn = true;
+                state.isRefreshing = false;
             })
             .addCase(fetchContacts.fulfilled, handleFetchContacts)
             .addCase(addNewContact.fulfilled, handleAddNewContact)
