@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import { ContactFormStyle, LabelForm, InputForm, ButtonForAdd } from "components/ContactForm/ContactForm.styled";
-import { useDispatch } from "react-redux";
-// import { selectContacts } from "redux/selector";
-import { addNewContact } from "redux/operations";
-// import { toastWarn } from "components/services/toasts";
+import { useDispatch, useSelector } from "react-redux";
+import { selectContacts } from "redux/selector";
+import { addNewContact } from "redux/operations/contactsOperations";
+import { toastWarn } from "components/services/toasts";
 
 export const ContactForm = () => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     
-    // const contacts = useSelector(selectContacts);
+    const contacts = useSelector(selectContacts);
     const dispatch = useDispatch();
     
     const onSubmitForm = (event) => {
         event.preventDefault();
-        // const checkContact = contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase());
-        // if (checkContact === true) {
-        //     reset();
-        //     return toastWarn(name);
-        // };
+        const checkContact = contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase());
+        if (checkContact === true) {
+            reset();
+            return toastWarn(name);
+        };
         const newContact = {
             name,
             number,

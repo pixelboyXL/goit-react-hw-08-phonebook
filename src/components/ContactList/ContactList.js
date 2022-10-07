@@ -2,7 +2,7 @@ import { ContactItemEntrails } from 'components/ContactList/ContactListItem';
 import { ContactListStyle, ContactItem } from "components/ContactList/ContactList.styled";
 import { selectFilteredContacts, selectAuth } from 'redux/selector';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/operations/contactsOperations';
 import { useEffect } from 'react';
 
 export const ContactList = () => {

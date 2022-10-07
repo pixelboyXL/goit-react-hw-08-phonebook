@@ -12,11 +12,11 @@ export const selectFilteredContacts = createSelector([selectContacts, selectFilt
     return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
 });
 
-export const selectUser = state => state.contacts.user;
+export const selectUser = state => state.user.user;
 
-export const selectIsLoggedIn = state => state.contacts.isLoggedIn;
+export const selectIsLoggedIn = state => state.user.isLoggedIn;
 
-export const selectIsRefreshing = state => state.contacts.isRefreshing;
+export const selectIsRefreshing = state => state.user.isRefreshing;
 
 export const selectAuth = createSelector([selectUser, selectIsLoggedIn, selectIsRefreshing], (user, isLoggedIn, isRefreshing) => ({
     user,

@@ -1,5 +1,3 @@
-// Код для стора на Redux Toolkit + createSlice👇
-
 import { configureStore } from "@reduxjs/toolkit";
 import {
     persistStore,
@@ -10,11 +8,23 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-import { persistedReducer } from "./reducer";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { phonebookUserReducer } from "./slices/userSlice";
+import { phonebookContactsReducer } from "./slices/contactsSlice";
+
+const persistConfig = {
+    key: 'contacts',
+    storage,
+    whitelist: ['token'],
+};
+
+export const persistedUserReducer = persistReducer(persistConfig, phonebookUserReducer);
 
 export const store = configureStore({
     reducer: {
-        contacts: persistedReducer,
+        user: persistedUserReducer,
+        contacts: phonebookContactsReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

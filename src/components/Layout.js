@@ -1,7 +1,8 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppBar } from './AppBar';
 import { Box } from './Box';
-// import { Suspense } from 'react';
+import { Loading } from './Loading';
 
 export const Layout = () => {
     return (
@@ -17,9 +18,9 @@ export const Layout = () => {
             // boxShadow="shadow"
         >
             <AppBar />
-            {/* <Suspense fallback={null}> */}
+            <Suspense fallback={<Loading />}>
                 <Outlet />
-            {/* </Suspense> */}
+            </Suspense>
         </Box>
     );
 };

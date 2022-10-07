@@ -17,3 +17,12 @@ export const toastWarn = name => {
 export const toastError = () => {
     return toast.error("Oops, something went wrong, please try again 🙊", toastSettings);
 };
+export const toastSuccessRegister = () => {
+    return toast.success("Done! You have successfully created an account! Get ready to work  🎉", toastSettings);
+};
+export const toastSuccessLogIn = () => {
+    return toast.success("Hello! Nice to meet you again! Ready to work with your contacts? 🏋️‍♂️", toastSettings);
+};
+export const toastSuccessLogOut = () => {
+    return toast.success("We hope you made it in time. See you soon 👋", toastSettings);
+};

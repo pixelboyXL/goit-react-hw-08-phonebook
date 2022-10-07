@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selector';
-import { refreshUser } from 'redux/operations';
+import { refreshUser } from 'redux/operations/userOperations';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Home } from 'pages/Home';
-import { Phonebook } from 'pages/Phonebook';
 import { Register } from 'pages/Register';
 import { Login } from 'pages/Login';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -13,6 +12,11 @@ import { PrivateRoute } from './PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalStyle } from './GlobalStyles';
+
+const Phonebook = lazy(() => import('../pages/Phonebook').then(module => ({
+  ...module,
+  default: module.Phonebook,
+})));
 
 export const App = () => {
   const dispatch = useDispatch();
