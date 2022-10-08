@@ -9,7 +9,7 @@ export const Layout = () => {
         <Box as="div"
             mx="auto"
             // my="200px"
-            width="960px"
+            maxWidth="1280px"
             // p={5}
             // bg="maybeYellow"
             // border="normal"

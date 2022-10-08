@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
+// import background from "./images/analogue-gfbc427f4d_1920.jpg";
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -10,6 +11,9 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #88A795;
+        /* background-image: url();
+        background-repeat: no-repeat;
+        background-size: cover; */
     }
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -84,6 +88,6 @@ export const NavTitle = styled(NavLink)`
     color: ${p => p.theme.colors.clearlyWhite};
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &.active {
-        color: ${p => p.theme.colors.cherryRed};
+        color: ${p => p.theme.colors.reallyBisque};
     }
 `;

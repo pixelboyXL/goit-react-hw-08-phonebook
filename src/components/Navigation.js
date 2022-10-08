@@ -1,24 +1,22 @@
 import { useSelector } from "react-redux";
 import { selectAuth } from "redux/selector";
 import { Box } from "./Box";
-import { Link } from "react-router-dom";
-// import { AppBarList, AppBarItem, NavTitle } from "./GlobalStyles";
+import { AppBarList, AppBarItem, NavTitle } from "./GlobalStyles";
 
 export const Navigation = () => {
     const { isLoggedIn } = useSelector(selectAuth);
 
     return (
         <Box as="nav">
-            <ul style={{ display: "flex" }} >
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
+            <AppBarList style={{ display: "flex" }} >
+                <AppBarItem>
+                    <NavTitle to="/">Home</NavTitle>
+                </AppBarItem>
                 {isLoggedIn === true &&
-                    <li>
-                        <Link to="/phonebook">Phonebook</Link>
-                    </li>}
-                
-            </ul>
+                    <AppBarItem>
+                        <NavTitle to="/phonebook">Phonebook</NavTitle>
+                    </AppBarItem>}
+            </AppBarList>
         </Box>
     );
 };

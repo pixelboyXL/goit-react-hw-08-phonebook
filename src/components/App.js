@@ -45,7 +45,7 @@ export const App = () => {
               path="/login"
               element={<RestrictedRoute redirectTo="/phonebook" component={<Login />} />}
             />
-          </Route>
+            </Route>
         </Routes>
         <GlobalStyle />
         <ToastContainer autoClose={3000} />

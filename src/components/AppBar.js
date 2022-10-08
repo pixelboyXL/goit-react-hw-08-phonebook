@@ -1,7 +1,7 @@
 import { Box } from "./Box";
 import { Navigation } from "./Navigation";
-import { AuthNav } from "./AuthNav";
-import { UserMenu } from "./UserMenu";
+import { AuthNav } from "./AuthNav/AuthNav";
+import { UserMenu } from "./UserMenu/UserMenu";
 import { useSelector } from "react-redux";
 import { selectAuth } from "redux/selector";
 
@@ -12,6 +12,7 @@ export const AppBar = () => {
         <Box as="header"
             display="flex"
             justifyContent="space-between"
+            alignItems="center"
             mb={5}
             p={3}
             bg="#082911"
