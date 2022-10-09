@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { ContactFormStyle, LabelForm, InputForm, ButtonForAdd } from "components/ContactForm/ContactForm.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "redux/selector";
 import { addNewContact } from "redux/operations/contactsOperations";
+import { ClassicFormStyle, ClassicLabelForm, ClassicInputForm, ClassicButton } from "components/GlobalStyles";
 import { toastWarn } from "components/services/toasts";
+import { PersonIconStyle, LocalPhoneIconStyle } from "components/icons/icons.styled";
+import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 
 export const ContactForm = () => {
     const [name, setName] = useState('');
@@ -32,9 +34,9 @@ export const ContactForm = () => {
     };
     
     return (
-        <ContactFormStyle onSubmit={onSubmitForm}>
-            <LabelForm>Name
-                <InputForm
+        <ClassicFormStyle onSubmit={onSubmitForm}>
+            <ClassicLabelForm>Name
+                <ClassicInputForm
                 type="text"
                 name="name"
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -43,9 +45,10 @@ export const ContactForm = () => {
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 />
-            </LabelForm>
-            <LabelForm>Number
-                <InputForm
+                <PersonIconStyle />
+            </ClassicLabelForm>
+            <ClassicLabelForm>Number
+                <ClassicInputForm
                 type="tel"
                 name="number"
                 pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -54,8 +57,9 @@ export const ContactForm = () => {
                 value={number}
                 onChange={(event) => setNumber(event.target.value)}
                 />
-            </LabelForm>
-            <ButtonForAdd type="submit">Add contact</ButtonForAdd>
-        </ContactFormStyle>
+                <LocalPhoneIconStyle />
+            </ClassicLabelForm>
+            <ClassicButton type="submit">Add contact<AddIcCallIcon sx={{ marginLeft: "5px" }} /></ClassicButton>
+        </ClassicFormStyle>
     );
 };

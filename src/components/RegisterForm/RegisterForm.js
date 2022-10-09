@@ -1,5 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/operations/userOperations';
+import { ClassicFormStyle, ClassicLabelForm, ClassicInputForm, ClassicButton } from "components/GlobalStyles";
+import { PersonIconStyle, EmailIconStyle, KeyIconStyle } from "components/icons/icons.styled";
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 export const RegisterForm = () => {
     const dispatch = useDispatch();
@@ -18,20 +21,23 @@ export const RegisterForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} autoComplete="on">
-            <label>
+        <ClassicFormStyle onSubmit={handleSubmit} autoComplete="on">
+            <ClassicLabelForm>
                 Username
-                <input type="text" name="name" />
-            </label>
-            <label>
+                <ClassicInputForm type="text" name="name" />
+                <PersonIconStyle />
+            </ClassicLabelForm>
+            <ClassicLabelForm>
                 Email
-                <input type="email" name="email" />
-            </label>
-            <label>
+                <ClassicInputForm type="email" name="email" />
+                <EmailIconStyle />
+            </ClassicLabelForm>
+            <ClassicLabelForm>
                 Password
-                <input type="password" name="password" />
-            </label>
-            <button type="submit">Register</button>
-        </form>
+                <ClassicInputForm type="password" name="password" />
+                <KeyIconStyle />
+            </ClassicLabelForm>
+            <ClassicButton type="submit">Register<AppRegistrationIcon sx={{ marginLeft: "5px" }}/></ClassicButton>
+        </ClassicFormStyle>
     );
 };

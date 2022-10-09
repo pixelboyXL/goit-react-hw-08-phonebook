@@ -9,9 +9,9 @@ import { Register } from 'pages/Register';
 import { Login } from 'pages/Login';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { GlobalStyle } from './GlobalStyles';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { GlobalStyle } from './GlobalStyles';
 
 const Phonebook = lazy(() => import('../pages/Phonebook').then(module => ({
   ...module,

@@ -1,7 +1,8 @@
-import { LabelFilter, InputFilter } from "components/Filter/Filter.styled";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from 'redux/selector';
 import { setFilter } from "redux/slices/contactsSlice";
+import { LabelFilter, InputFilter } from "components/Filter/Filter.styled";
+import { SearchIconStyle } from "components/icons/icons.styled";
 
 export const Filter = () => {
     const filter = useSelector(selectFilter);
@@ -17,6 +18,7 @@ export const Filter = () => {
                 value={filter}
                 onChange={(event) => dispatch(setFilter(event.target.value))}
             />
+            <SearchIconStyle />
         </LabelFilter>
     );
 };

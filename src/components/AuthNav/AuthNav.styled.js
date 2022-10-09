@@ -19,6 +19,7 @@ export const AuthListItem = styled.li`
 `;
 
 export const AuthTitle = styled(NavLink)`
+    display: flex;
     font-weight: ${p => p.theme.fontWeights.medium};
     font-size: ${p => p.theme.fontSizes.m};
     color: ${p => p.theme.colors.clearlyWhite};

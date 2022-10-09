@@ -1,5 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/operations/userOperations';
+import { ClassicFormStyle, ClassicLabelForm, ClassicInputForm, ClassicButton } from "components/GlobalStyles";
+import { EmailIconStyle, KeyIconStyle } from "components/icons/icons.styled";
+import LoginIcon from '@mui/icons-material/Login';
 
 export const LoginForm = () => {
     const dispatch = useDispatch();
@@ -17,16 +20,18 @@ export const LoginForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} autoComplete="on">
-            <label>
+        <ClassicFormStyle onSubmit={handleSubmit} autoComplete="on">
+            <ClassicLabelForm>
                 Email
-                <input type="email" name="email" />
-            </label>
-            <label>
+                <ClassicInputForm type="email" name="email" />
+                <EmailIconStyle />
+            </ClassicLabelForm>
+            <ClassicLabelForm>
                 Password
-                <input type="password" name="password" />
-            </label>
-        <button type="submit">Log In</button>
-        </form>
+                <ClassicInputForm type="password" name="password" />
+                <KeyIconStyle />
+            </ClassicLabelForm>
+        <ClassicButton type="submit">Log In<LoginIcon sx={{ marginLeft: "5px" }}/></ClassicButton>
+        </ClassicFormStyle>
     );
 };

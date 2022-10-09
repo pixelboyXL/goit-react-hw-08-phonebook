@@ -11,10 +11,11 @@ export const AppBar = () => {
     return (
         <Box as="header"
             display="flex"
+            flexWrap="wrap"
             justifyContent="space-between"
             alignItems="center"
             mb={5}
-            p={3}
+            p={4}
             bg="#082911"
             boxShadow="shadow">
             <Navigation />

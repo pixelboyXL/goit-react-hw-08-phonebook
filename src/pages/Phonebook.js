@@ -3,7 +3,7 @@ import { ContactForm } from "components/ContactForm/ContactForm";
 import { ContactList } from "components/ContactList/ContactList";
 import { Filter } from "components/Filter/Filter";
 import { Loading } from "components/Loading";
-import { MainTitle, ContactsTitle, WarningMessage, } from "components/GlobalStyles";
+import { MainTitle, SecondTitle, WarningMessage, } from "components/GlobalStyles";
 import { useSelector } from "react-redux";
 import { selectContacts, selectIsLoading } from "redux/selector";
 
@@ -14,11 +14,11 @@ export const Phonebook = () => {
     return (
         <>
             <Box as="section" mb={5}>
-                <MainTitle>Ready to add new people?</MainTitle>
+                <MainTitle>Ready to add new people? 👀</MainTitle>
                 <ContactForm />
             </Box>
             <Box as="section">
-                <ContactsTitle>My Contacts</ContactsTitle>
+                <SecondTitle>My Contacts 🕺💃</SecondTitle>
                 <Filter />
                 {loading === true && <Loading />}
                 <ContactList />

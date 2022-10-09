@@ -1,7 +1,6 @@
-// import { ClassicButton } from "components/GlobalStyles";
 // import styled from "styled-components";
 
-// export const ContactFormStyle = styled.form`
+// export const LoginFormStyle = styled.form`
 //     max-width: 180px;
 //     margin: 0 auto;
 //     padding: ${p => p.theme.space[5]}px;
@@ -23,10 +22,4 @@
 //     &:first-child {
 //         margin-bottom: ${p => p.theme.space[4]}px;
 //     }
-// `;
-
-// export const ButtonForAdd = styled(ClassicButton)`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
 // `;

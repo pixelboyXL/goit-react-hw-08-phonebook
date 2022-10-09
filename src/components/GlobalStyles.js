@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
-// import background from "./images/analogue-gfbc427f4d_1920.jpg";
+import background from "./images/laptop-3076957_1920.jpg";
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -11,9 +11,12 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #88A795;
-        /* background-image: url();
+        background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.5) 0%, rgba(94, 94, 98, 0.35) 100%), url(${background});
         background-repeat: no-repeat;
-        background-size: cover; */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: calc(100vh - 50px);
     }
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -42,13 +45,13 @@ export const GlobalStyle = createGlobalStyle`
 export const MainTitle = styled.h1`
     text-align: center;
     margin-bottom: ${p => p.theme.space[5]}px;
-    color: ${p => p.theme.colors.almostDarkGreen};
+    color: ${p => p.theme.colors.clearlyWhite};
 `;
 
-export const ContactsTitle = styled.h2`
+export const SecondTitle = styled.h2`
     text-align: center;
     margin-bottom: ${p => p.theme.space[4]}px;
-    color: ${p => p.theme.colors.almostDarkGreen};
+    color: ${p => p.theme.colors.clearlyWhite};
 `;
 
 export const WarningMessage = styled.p`
@@ -89,5 +92,59 @@ export const NavTitle = styled(NavLink)`
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &.active {
         color: ${p => p.theme.colors.reallyBisque};
+    }
+`;
+
+export const ClassicFormStyle = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: ${p => p.theme.space[5]}px;
+    border: ${p => `${p.theme.borders.normal} ${p.theme.colors.almostDarkGreen}`};
+    border-radius: ${p => p.theme.radii.sm};
+`;
+
+export const ClassicLabelForm = styled.label`
+    position: relative;
+    font-weight: ${p => p.theme.fontWeights.medium};
+    font-size: ${p => p.theme.fontSizes.m};
+    color: ${p => p.theme.colors.clearlyWhite};
+`;
+
+export const ClassicInputForm = styled.input`
+    display: block;
+    width: 240px;
+    padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 35px;
+    margin-top: ${p => p.theme.space[2]}px;
+    outline: none;
+    border: ${p => `${p.theme.borders.normal} ${p.theme.colors.almostDarkGreen}`};
+    border-radius: ${p => p.theme.radii.sm};
+    &:first-child {
+        margin-bottom: ${p => p.theme.space[4]}px;
+    }
+`;
+
+export const ClassicButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: ${p => p.theme.space[3]}px;
+    border: ${p => `${p.theme.borders.normal} ${p.theme.colors.almostDarkGreen}`};
+    border-radius: ${p => p.theme.radii.sm};
+    box-shadow: ${p => p.theme.shadows.shadow};
+    cursor: pointer;
+    color: ${p => p.theme.colors.maybeYellow};
+    background-color: ${p => p.theme.colors.almostDarkGreen};
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+        transform: scale(1.15);
+        color: ${p => p.theme.colors.almostDarkGreen};
+        background-color: ${p => p.theme.colors.maybeYellow};
     }
 `;
