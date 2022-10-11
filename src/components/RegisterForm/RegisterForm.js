@@ -1,7 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/operations/userOperations';
-import { ClassicFormStyle, ClassicLabelForm, ClassicInputForm, ClassicButton } from "components/GlobalStyles";
-import { PersonIconStyle, EmailIconStyle, KeyIconStyle } from "components/icons/icons.styled";
+import { ClassicFormStyle, ClassicButton } from "components/GlobalStyles";
+import { UserNameField } from 'components/FormFields/UserNameField';
+import { EmailField } from 'components/FormFields/EmailField';
+import { PasswordField } from 'components/FormFields/PasswordField';
+import { toastWarnEmptyField } from 'components/services/toasts';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 export const RegisterForm = () => {
@@ -10,11 +13,17 @@ export const RegisterForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.currentTarget;
+        const name = form.elements.name.value;
+        const email = form.elements.email.value;
+        const password = form.elements.password.value;
+        if (name === "" || email === "" || password === "") {
+            return toastWarnEmptyField();
+        }
         dispatch(
             registerUser({
-                name: form.elements.name.value,
-                email: form.elements.email.value,
-                password: form.elements.password.value,
+                name,
+                email,
+                password,
             })
         );
         form.reset();
@@ -22,21 +31,9 @@ export const RegisterForm = () => {
 
     return (
         <ClassicFormStyle onSubmit={handleSubmit} autoComplete="on">
-            <ClassicLabelForm>
-                Username
-                <ClassicInputForm type="text" name="name" />
-                <PersonIconStyle />
-            </ClassicLabelForm>
-            <ClassicLabelForm>
-                Email
-                <ClassicInputForm type="email" name="email" />
-                <EmailIconStyle />
-            </ClassicLabelForm>
-            <ClassicLabelForm>
-                Password
-                <ClassicInputForm type="password" name="password" />
-                <KeyIconStyle />
-            </ClassicLabelForm>
+            <UserNameField />
+            <EmailField />
+            <PasswordField />
             <ClassicButton type="submit">Register<AppRegistrationIcon sx={{ marginLeft: "5px" }}/></ClassicButton>
         </ClassicFormStyle>
     );

@@ -12,18 +12,18 @@ export const Phonebook = () => {
     const contacts = useSelector(selectContacts);
 
     return (
-        <>
+        <div>
             <Box as="section" mb={5}>
                 <MainTitle>Ready to add new people? 👀</MainTitle>
                 <ContactForm />
             </Box>
-            <Box as="section">
+            <Box as="section" mb={5}>
                 <SecondTitle>My Contacts 🕺💃</SecondTitle>
                 <Filter />
                 {loading === true && <Loading />}
                 <ContactList />
                 {contacts.length === 0 && <WarningMessage>Looks like you don`t have any contacts yet or just clear them all. Please add new contact🤔</WarningMessage>}
             </Box>
-        </>
+        </div>
     );
 };

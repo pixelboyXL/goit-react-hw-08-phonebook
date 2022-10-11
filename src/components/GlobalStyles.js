@@ -16,7 +16,8 @@ export const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        height: calc(100vh - 50px);
+        /* height: calc(100vh - 50px); */
+        height: 100%;
     }
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

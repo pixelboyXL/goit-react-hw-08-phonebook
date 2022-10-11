@@ -1,36 +1,35 @@
 import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/operations/userOperations';
-import { ClassicFormStyle, ClassicLabelForm, ClassicInputForm, ClassicButton } from "components/GlobalStyles";
-import { EmailIconStyle, KeyIconStyle } from "components/icons/icons.styled";
+import { ClassicFormStyle, ClassicButton } from "components/GlobalStyles";
+import { EmailField } from 'components/FormFields/EmailField';
+import { PasswordField } from 'components/FormFields/PasswordField';
+import { toastWarnEmptyField } from 'components/services/toasts';
 import LoginIcon from '@mui/icons-material/Login';
 
 export const LoginForm = () => {
     const dispatch = useDispatch();
 
-    const handleSubmit = e => {
+    const handleSubmitLogIn = e => {
         e.preventDefault();
         const form = e.currentTarget;
+        const email = form.elements.email.value;
+        const password = form.elements.password.value;
+        if (email === "" || password === "") {
+            return toastWarnEmptyField();
+        }
         dispatch(
             logInUser({
-                email: form.elements.email.value,
-                password: form.elements.password.value,
+                email,
+                password,
             })
         );
         form.reset();
     };
 
     return (
-        <ClassicFormStyle onSubmit={handleSubmit} autoComplete="on">
-            <ClassicLabelForm>
-                Email
-                <ClassicInputForm type="email" name="email" />
-                <EmailIconStyle />
-            </ClassicLabelForm>
-            <ClassicLabelForm>
-                Password
-                <ClassicInputForm type="password" name="password" />
-                <KeyIconStyle />
-            </ClassicLabelForm>
+        <ClassicFormStyle onSubmit={handleSubmitLogIn} autoComplete="on">
+            <EmailField />
+            <PasswordField />
         <ClassicButton type="submit">Log In<LoginIcon sx={{ marginLeft: "5px" }}/></ClassicButton>
         </ClassicFormStyle>
     );

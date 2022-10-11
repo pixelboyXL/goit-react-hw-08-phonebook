@@ -3,13 +3,18 @@ import { logOutUser } from 'redux/operations/userOperations';
 import { selectAuth } from "redux/selector";
 import { UserEmail, ButtonForLogOut } from './UserMenu.styled';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { AvatarStyle } from 'components/icons/icons.styled';
 
 export const UserMenu = () => {
     const dispatch = useDispatch();
     const { user } = useSelector(selectAuth);
 
+    const userMainLetter = user.email.slice(0, 1).toUpperCase();
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;    
+
     return (
-        <div style={{ display: "flex", alignItems: "center"}}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+            <AvatarStyle letter={userMainLetter} color={randomColor} />
             <UserEmail>{user.email}</UserEmail>
             <ButtonForLogOut type='button' onClick={() => dispatch(logOutUser())}>
                 Log Out<LogoutIcon sx={{ marginLeft: "5px" }}/>

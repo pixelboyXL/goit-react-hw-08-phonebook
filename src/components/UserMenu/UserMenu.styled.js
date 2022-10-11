@@ -10,7 +10,6 @@ export const UserEmail = styled.p`
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover,
     &:focus {
-        transform: scale(1.1);
         text-shadow: 0px 5px 10px ${p => p.theme.colors.reallyBisgue};
     }
 `;

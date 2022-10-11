@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "redux/selector";
 import { addNewContact } from "redux/operations/contactsOperations";
 import { ClassicFormStyle, ClassicLabelForm, ClassicInputForm, ClassicButton } from "components/GlobalStyles";
-import { toastWarn } from "components/services/toasts";
+import { toastWarnDuplicate } from "components/services/toasts";
 import { PersonIconStyle, LocalPhoneIconStyle } from "components/icons/icons.styled";
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 
@@ -19,7 +19,7 @@ export const ContactForm = () => {
         const checkContact = contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase());
         if (checkContact === true) {
             reset();
-            return toastWarn(name);
+            return toastWarnDuplicate(name);
         };
         const newContact = {
             name,
