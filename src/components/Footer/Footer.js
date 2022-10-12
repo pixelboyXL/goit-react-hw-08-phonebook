@@ -7,7 +7,9 @@ export const Footer = () => {
     return (
         <FooterWrap>
             <FooterTitle>Powered and designed by <FooterOwner>pixelboyXL</FooterOwner></FooterTitle>
-            <Box>
+            <Box as="div"
+                display="flex"
+                alignItems="center">
                 <GitHubIconStyle />
                 <LinkedInIconStyle />
             </Box>

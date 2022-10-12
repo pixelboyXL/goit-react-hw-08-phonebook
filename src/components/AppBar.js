@@ -14,6 +14,8 @@ export const AppBar = () => {
             flexWrap="wrap"
             justifyContent="space-between"
             alignItems="center"
+            mx="auto"
+            maxWidth="1280px"
             mb={5}
             p={4}
             bg="#082911"

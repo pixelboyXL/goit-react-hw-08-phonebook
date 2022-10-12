@@ -49,6 +49,13 @@ export const theme = {
         round: '50%',
     },
     shadows: {
-        shadow: '0 4px 4px rgba(0, 0, 0, .25)',
-    }
+        shadowFirst: '0 4px 4px rgba(0, 0, 0, .25)',
+        shadowSecond: '0px 5px 10px bisque',
+    },
+    transition: {
+        cubicBezier: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+    },
+    transform: {
+        scale: 'scale(1.15)',
+    },
 };

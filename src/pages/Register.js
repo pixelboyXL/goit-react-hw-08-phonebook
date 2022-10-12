@@ -1,6 +1,6 @@
 import { Box } from "components/Box";
 import { SecondTitle } from "components/GlobalStyles";
-import { RegisterForm } from "components/RegisterForm/RegisterForm";
+import { RegisterForm } from "components/RegisterForm";
 
 export const Register = () => {
     return (

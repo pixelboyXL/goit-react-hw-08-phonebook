@@ -10,7 +10,7 @@ export const ContactListItem = styled.li`
     justify-content: center;
     align-items: center;
     &:not(:last-child) {
-        margin-bottom: 10px;
+        margin-bottom: ${p => p.theme.space[3]}px;
     }
 `;
 
@@ -26,15 +26,14 @@ export const ContactNumber = styled.p`
     font-size: ${p => p.theme.fontSizes.m};
     color: ${p => p.theme.colors.clearlyWhite};
     cursor: pointer;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: ${p => p.theme.transition.cubicBezier};
     &:hover,
     &:focus {
-        text-shadow: 0px 5px 10px ${p => p.theme.colors.reallyBisgue};
+        text-shadow: ${p => p.theme.shadows.shadowSecond};
     }
 `;
 
 export const ButtonForDelete = styled(ClassicButton)`
     padding: ${p => p.theme.space[2]}px;
-    margin: 0;
-    margin-left: 10px;
+    margin-left: ${p => p.theme.space[3]}px;
 `;

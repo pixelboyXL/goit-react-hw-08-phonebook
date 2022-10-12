@@ -8,7 +8,7 @@ export const Navigation = () => {
 
     return (
         <Box as="nav">
-            <AppBarList style={{ display: "flex" }} >
+            <AppBarList>
                 <AppBarItem>
                     <NavTitle to="/">Home</NavTitle>
                 </AppBarItem>

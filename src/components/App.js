@@ -26,30 +26,28 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing
-    ? (<b>Refreshing user...</b>)
-    : (
-      <>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route
-              path="/phonebook"
-              element={<PrivateRoute redirectTo="/login" component={<Phonebook />} />}
-            />
-            <Route
-              path="/register"
-              element={<RestrictedRoute redirectTo="/phonebook" component={<Register />} />}
-            />
-            <Route
-              path="/login"
-              element={<RestrictedRoute redirectTo="/phonebook" component={<Login />} />}
-            />
-            </Route>
-        </Routes>
-        <GlobalStyle />
-        <ToastContainer autoClose={3000} />
-    </>
+  return (!isRefreshing &&
+    (<>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="/phonebook"
+            element={<PrivateRoute redirectTo="/login" component={<Phonebook />} />}
+          />
+          <Route
+            path="/register"
+            element={<RestrictedRoute redirectTo="/phonebook" component={<Register />} />}
+          />
+          <Route
+            path="/login"
+            element={<RestrictedRoute redirectTo="/phonebook" component={<Login />} />}
+          />
+          </Route>
+      </Routes>
+      <GlobalStyle />
+      <ToastContainer autoClose={3000} />
+    </>)
     );
 };
 

@@ -8,10 +8,10 @@ export const AuthList = styled.ul`
 
 export const AuthListItem = styled.li`
     cursor: pointer;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: ${p => p.theme.transition.cubicBezier};
     &:hover {
-        transform: scale(1.15);
-        text-shadow: 0px 5px 10px ${p => p.theme.colors.reallyBisgue};
+        transform: ${p => p.theme.transform.scale};
+        text-shadow: ${p => p.theme.shadows.shadowSecond};
     }
     &:not(:last-child) {
         margin-right: ${p => p.theme.space[4]}px;

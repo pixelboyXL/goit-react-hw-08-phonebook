@@ -7,25 +7,18 @@ import { Footer } from './Footer/Footer';
 
 export const Layout = () => {
     return (
-        <Box as="div"
-            mx="auto"
-            // my="200px"
-            maxWidth="1280px"
-            minHeight="100%"
-            display="flex"
-            flexDirection="column"
-            // p={5}
-            // bg="maybeYellow"
-            // border="normal"
-            // borderRadius="sm"
-            // borderColor="almostDarkGreen"
-            // boxShadow="shadow"
-        >
+        <>
             <AppBar />
             <Suspense fallback={<Loading />}>
-                <Outlet />
+                <Box as="main"
+                    mx="auto"
+                    mb={5}
+                    maxWidth="1280px"
+                    >
+                    <Outlet />
+                </Box>
             </Suspense>
-            {/* <Footer /> */}
-        </Box>
+            <Footer />
+        </>
     );
 };

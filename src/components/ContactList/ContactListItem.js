@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations/contactsOperations';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export const ContactItemEntrails = ({ id, name, number, color }) => {
+export const ContactItemEntrails = ({ id, name, number }) => {
     const dispatch = useDispatch();
 
     return (

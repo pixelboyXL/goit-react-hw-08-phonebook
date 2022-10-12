@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { Avatar } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { FooterLink } from 'components/Footer/Footer.styled';
 
 const iconStyle = {
     position: "absolute",
@@ -32,22 +33,30 @@ export const VisibilityIconStyle = () => <VisibilityIcon sx={{ fill: "#082911" }
 
 export const VisibilityOffIconStyle = () => <VisibilityOffIcon sx={{ fill: "#082911" }} />;
 
-export const AvatarStyle = ({ letter, color }) => <Avatar sx={{ marginRight: "10px", bgcolor: color }}>{letter}</Avatar>;
+export const AvatarStyle = ({ letter, color }) => <Avatar sx={{ width: "38px", height: "38px", marginRight: "10px", bgcolor: color, cursor: "pointer" }}>{letter}</Avatar>;
 
 export const GitHubIconStyle = () =>
-    <a href='https://github.com/pixelboyXL'
+    <FooterLink href='https://github.com/pixelboyXL'
         target="_blank"
         rel="noopener noreferrer nofollow">
-        <GitHubIcon sx={{ width: "40px", height: "40px"}}/>
-    </a>
+        <GitHubIcon sx={{
+            width: "33px",
+            height: "33px",
+            fill: "bisque",
+        }} />
+    </FooterLink>
     ;
 
     export const LinkedInIconStyle = () =>
-    <a href='https://www.linkedin.com/in/pixelboyxl/'
+    <FooterLink href='https://www.linkedin.com/in/pixelboyxl/'
         target="_blank"
         rel="noopener noreferrer nofollow">
-        <LinkedInIcon sx={{ width: "45px", height: "45px"}}/>
-    </a>
+            <LinkedInIcon sx={{
+                width: "39px",
+                height: "39px",
+                fill: "bisque",
+            }} />
+    </FooterLink>
 ;
 
 export const ButtonForVisibility = styled.button`

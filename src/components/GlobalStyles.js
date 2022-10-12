@@ -16,8 +16,6 @@ export const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        /* height: calc(100vh - 50px); */
-        height: 100%;
     }
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -76,10 +74,10 @@ export const AppBarList = styled.ul`
 
 export const AppBarItem = styled.li`
     cursor: pointer;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: ${p => p.theme.transition.cubicBezier};
     &:hover {
-        transform: scale(1.15);
-        text-shadow: 0px 5px 10px ${p => p.theme.colors.reallyBisgue};
+        transform: ${p => p.theme.transform.scale};
+        text-shadow: ${p => p.theme.shadows.shadowSecond};
     }
     &:not(:first-child) {
         margin-left: ${p => p.theme.space[4]}px;
@@ -90,7 +88,7 @@ export const NavTitle = styled(NavLink)`
     font-weight: ${p => p.theme.fontWeights.medium};
     font-size: ${p => p.theme.fontSizes.l};
     color: ${p => p.theme.colors.clearlyWhite};
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: ${p => p.theme.transition.cubicBezier};
     &.active {
         color: ${p => p.theme.colors.reallyBisque};
     }
@@ -141,10 +139,10 @@ export const ClassicButton = styled.button`
     cursor: pointer;
     color: ${p => p.theme.colors.maybeYellow};
     background-color: ${p => p.theme.colors.almostDarkGreen};
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: ${p => p.theme.transition.cubicBezier};
     &:hover,
     &:focus {
-        transform: scale(1.15);
+        transform: ${p => p.theme.transform.scale};
         color: ${p => p.theme.colors.almostDarkGreen};
         background-color: ${p => p.theme.colors.maybeYellow};
     }

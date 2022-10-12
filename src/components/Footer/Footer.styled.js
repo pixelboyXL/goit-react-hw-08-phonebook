@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 export const FooterWrap = styled.footer`
-    position: fixed;
-    bottom: 0px;
-    width: 1280px;
-    height: 55px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 10px;
-    background-color: #082911;
+    margin: 0 auto;
+    max-width: 1280px;
+    height: 55px;
+    padding: ${p => p.theme.space[4]}px;
+    background-color: ${p => p.theme.colors.almostDarkGreen};
 `;
 
 export const FooterTitle = styled.p`
@@ -19,10 +17,22 @@ export const FooterTitle = styled.p`
     color: ${p => p.theme.colors.clearlyWhite};
     margin-right: ${p => p.theme.space[4]}px;
     cursor: pointer;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: ${p => p.theme.transition.cubicBezier};
     &:hover,
     &:focus {
-        text-shadow: 0px 5px 10px ${p => p.theme.colors.reallyBisgue};
+        text-shadow: ${p => p.theme.shadows.shadowSecond};
+    }
+`;
+
+export const FooterLink = styled.a`
+    fill: ${p => p.theme.colors.reallyBisgue};
+    &:not(:last-child) {
+        margin-right: ${p => p.theme.space[4]}px;
+    }
+    transition: ${p => p.theme.transition.cubicBezier};
+    &:hover,
+    &:focus {
+        transform: ${p => p.theme.transform.scale};
     }
 `;
 

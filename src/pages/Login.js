@@ -1,6 +1,6 @@
 import { Box } from "components/Box";
 import { SecondTitle } from "components/GlobalStyles";
-import { LoginForm } from "components/LoginForm/LoginForm";
+import { LoginForm } from "components/LoginForm";
 
 export const Login = () => {
     return (
