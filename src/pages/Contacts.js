@@ -7,7 +7,7 @@ import { MainTitle, SecondTitle, WarningMessage, } from "components/GlobalStyles
 import { useSelector } from "react-redux";
 import { selectContacts, selectIsLoading } from "redux/selector";
 
-export const Phonebook = () => {
+export const Contacts = () => {
     const loading = useSelector(selectIsLoading);
     const contacts = useSelector(selectContacts);
 

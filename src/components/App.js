@@ -13,9 +13,9 @@ import { GlobalStyle } from './GlobalStyles';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Phonebook = lazy(() => import('../pages/Phonebook').then(module => ({
+const Contacts = lazy(() => import('../pages/Contacts').then(module => ({
   ...module,
-  default: module.Phonebook,
+  default: module.Contacts,
 })));
 
 export const App = () => {
@@ -32,16 +32,16 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route
-            path="/phonebook"
-            element={<PrivateRoute redirectTo="/login" component={<Phonebook />} />}
+            path="/contacts"
+            element={<PrivateRoute redirectTo="/login" component={<Contacts />} />}
           />
           <Route
             path="/register"
-            element={<RestrictedRoute redirectTo="/phonebook" component={<Register />} />}
+            element={<RestrictedRoute redirectTo="/contacts" component={<Register />} />}
           />
           <Route
             path="/login"
-            element={<RestrictedRoute redirectTo="/phonebook" component={<Login />} />}
+            element={<RestrictedRoute redirectTo="/contacts" component={<Login />} />}
           />
           </Route>
       </Routes>

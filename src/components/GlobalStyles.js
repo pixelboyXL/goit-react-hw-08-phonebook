@@ -16,6 +16,11 @@ export const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+        scrollbar-gutter: stable both-edges;
+        overflow: overlay;
+    }
+    #root {
+        height: 100vh;
     }
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -38,6 +43,21 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 100%;
         height: auto;
         object-fit: contain;
+    }
+    body::-webkit-scrollbar {
+        width: 20px;
+    }
+    body::-webkit-scrollbar-track {
+        background-color: transparent;
+        margin-top: ${p => p.theme.space[4]}px;
+        margin-bottom: ${p => p.theme.space[7]}px;
+        opacity: 0;
+		border-radius: ${p => p.theme.radii.md};
+    }
+    body::-webkit-scrollbar-thumb {
+        background-color: ${p => p.theme.colors.reallyBisque};
+		border-radius: ${p => p.theme.radii.md};
+		border: ${p => `${p.theme.borders.medium} ${p.theme.colors.almostDarkGreen}`};
     }
 `;
 

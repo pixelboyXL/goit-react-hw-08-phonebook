@@ -10,11 +10,11 @@ export const Navigation = () => {
         <Box as="nav">
             <AppBarList>
                 <AppBarItem>
-                    <NavTitle to="/">Home</NavTitle>
+                    <NavTitle to="/" end>Home</NavTitle>
                 </AppBarItem>
                 {isLoggedIn === true &&
                     <AppBarItem>
-                        <NavTitle to="/phonebook">Phonebook</NavTitle>
+                        <NavTitle to="/contacts">Contacts</NavTitle>
                     </AppBarItem>}
             </AppBarList>
         </Box>

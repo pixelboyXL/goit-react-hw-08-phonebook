@@ -14,6 +14,7 @@ export const Layout = () => {
                     mx="auto"
                     mb={5}
                     maxWidth="1280px"
+                    height="100%"
                     >
                     <Outlet />
                 </Box>
