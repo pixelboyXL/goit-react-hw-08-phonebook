@@ -12,6 +12,8 @@ import { PrivateRoute } from './PrivateRoute';
 import { GlobalStyle } from './GlobalStyles';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Error } from './Error';
+import img from 'components/images/Best-Coming-Soon-and-404-Error-Page-Templates-for-Your-Unique-Websites.jpg';
 
 const Contacts = lazy(() => import('../pages/Contacts').then(module => ({
   ...module,
@@ -43,7 +45,9 @@ export const App = () => {
             path="/login"
             element={<RestrictedRoute redirectTo="/contacts" component={<Login />} />}
           />
-          </Route>
+          <Route path="*" element={<Error errorImg={img} />}
+          />
+      </Route>
       </Routes>
       <GlobalStyle />
       <ToastContainer autoClose={3000} />

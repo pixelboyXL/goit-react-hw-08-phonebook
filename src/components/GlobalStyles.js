@@ -61,6 +61,14 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
+export const MainWrap = styled.div`
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    text-align: center;
+`;
+
 export const MainTitle = styled.h1`
     text-align: center;
     margin-bottom: ${p => p.theme.space[5]}px;
@@ -114,6 +122,24 @@ export const NavTitle = styled(NavLink)`
     }
 `;
 
+export const NavButton = styled(NavLink)`
+    display: inline-flex;
+    padding: ${p => p.theme.space[3]}px;
+    border-radius: ${p => p.theme.radii.md};
+    border: ${p => `${p.theme.borders.normal} ${p.theme.colors.almostDarkGreen}`};
+    color: ${p => p.theme.colors.reallyBisque};
+    background-color: ${p => p.theme.colors.almostDarkGreen};
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+        color: ${p => p.theme.colors.almostDarkGreen};
+        background-color: ${p => p.theme.colors.reallyBisque};
+    }
+`;
+
+export const NavToLink = styled(NavLink)`
+    color: ${p => p.theme.colors.reallyBisque};
+`;
+
 export const ClassicFormStyle = styled.form`
     display: flex;
     flex-direction: column;
@@ -165,5 +191,15 @@ export const ClassicButton = styled.button`
         transform: ${p => p.theme.transform.scale};
         color: ${p => p.theme.colors.almostDarkGreen};
         background-color: ${p => p.theme.colors.maybeYellow};
+    }
+`;
+
+export const ErrorSection = styled.section`
+    text-align: center;
+    padding: ${p => p.theme.space[4]}px;
+    img {
+        padding-bottom: ${p => p.theme.space[5]}px;
+        display: block;
+        margin: 0 auto;
     }
 `;
