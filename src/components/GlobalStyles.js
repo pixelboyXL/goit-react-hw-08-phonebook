@@ -61,11 +61,22 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
+const size = {
+    mobile: '480',
+    tablet: '768',
+    desktop: '1280',
+};
+
+export const device = {
+    mobile: `(min-width: ${size.mobile}px)`,
+    mobileOnly: `(max-width: ${size.tablet - 0.02}px)`,
+    tablet: `(min-width: ${size.tablet}px)`,
+    tabletOnly: `(max-width: ${size.desktop - 0.02}px)`,
+    desktop: `(min-width: ${size.desktop}px)`,
+};
+
 export const MainWrap = styled.div`
-    position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    margin-top: ${p => p.theme.space[7]}px;
     text-align: center;
 `;
 
@@ -104,7 +115,7 @@ export const AppBarItem = styled.li`
     cursor: pointer;
     transition: ${p => p.theme.transition.cubicBezier};
     &:hover {
-        transform: ${p => p.theme.transform.scale};
+        transform: ${p => p.theme.transform.scaleThird};
         text-shadow: ${p => p.theme.shadows.shadowSecond};
     }
     &:not(:first-child) {
@@ -188,7 +199,7 @@ export const ClassicButton = styled.button`
     transition: ${p => p.theme.transition.cubicBezier};
     &:hover,
     &:focus {
-        transform: ${p => p.theme.transform.scale};
+        transform: ${p => p.theme.transform.scaleThird};
         color: ${p => p.theme.colors.almostDarkGreen};
         background-color: ${p => p.theme.colors.maybeYellow};
     }

@@ -1,7 +1,7 @@
 import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selector';
-import { refreshUser } from 'redux/operations/userOperations';
+import { clearAuthHeader, refreshUser } from 'redux/operations/userOperations';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Home } from 'pages/Home';
@@ -26,6 +26,10 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(refreshUser());
+
+    return () => {
+      clearAuthHeader();
+    };
   }, [dispatch]);
 
   return (!isRefreshing &&

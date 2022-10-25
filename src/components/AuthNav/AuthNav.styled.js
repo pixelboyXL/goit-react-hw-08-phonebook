@@ -10,7 +10,7 @@ export const AuthListItem = styled.li`
     cursor: pointer;
     transition: ${p => p.theme.transition.cubicBezier};
     &:hover {
-        transform: ${p => p.theme.transform.scale};
+        transform: ${p => p.theme.transform.scaleThird};
         text-shadow: ${p => p.theme.shadows.shadowSecond};
     }
     &:not(:last-child) {

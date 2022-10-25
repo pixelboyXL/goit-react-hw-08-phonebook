@@ -4,8 +4,13 @@ import { AuthNav } from "./AuthNav/AuthNav";
 import { UserMenu } from "./UserMenu/UserMenu";
 import { useSelector } from "react-redux";
 import { selectAuth } from "redux/selector";
+import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from "react";
+import { MobMenu } from "./MobMenu/MobMenu";
+import { MobMenuOpenButton, MobNav } from "./MobMenu/MobMenu.styled";
 
 export const AppBar = () => {
+    const [show, setShow] = useState(false);
     const { isLoggedIn } = useSelector(selectAuth);
 
     return (
@@ -21,7 +26,13 @@ export const AppBar = () => {
             bg="#082911"
             boxShadow="shadow">
             <Navigation />
-            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+            <MobMenuOpenButton onClick={() => setShow(true)}>
+                <MenuIcon sx={{ width: "36px", height: "40px" }} />
+            </MobMenuOpenButton>
+            {show && <MobMenu isLoggedIn={isLoggedIn} show={show} setShow={setShow} />}
+            <MobNav>
+                {isLoggedIn ? <UserMenu /> : <AuthNav />}
+            </MobNav>
         </Box>
     );
 };
