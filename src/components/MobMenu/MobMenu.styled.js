@@ -1,5 +1,6 @@
-import { device, ClassicButton } from "components/GlobalStyles";
 import styled from "styled-components";
+import { device, ClassicButton } from "components/GlobalStyles";
+import { AuthListItem, AuthTitle } from "components/AuthNav/AuthNav.styled";
 
 export const MobMenuWrap = styled.div`
     position: fixed;
@@ -13,26 +14,16 @@ export const MobMenuWrap = styled.div`
 	left: 0;
 	padding-top: 88px;
 	padding-bottom: 58px;
-	transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	.div {
-		width: 400px;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		@media screen and (min-width: 480px) {
-			position: relative;
-		}
-	}
 `;
 
 export const MobMenuOpenButton = styled(ClassicButton)`
     display: none;
-    padding: 0;
-    height: 40px;
-    color: ${p => p.theme.colors.clearlyWhite};
     @media ${device.mobileOnly} {
         display: block;
+		padding: 0;
+		margin-top: ${p => p.theme.space[1]}px;
+		height: 40px;
+		color: ${p => p.theme.colors.clearlyWhite};
     }
 `;
 
@@ -41,16 +32,38 @@ export const MobMenuCloseButton = styled(ClassicButton)`
     height: 40px;
     position: absolute;
 	top: 20px;
-	right: 22px;
+	right: 19px;
     color: ${p => p.theme.colors.clearlyWhite};
     background-color: transparent;
-    outline: none;
-    border: none;
+    outline: ${p => p.theme.borders.none};
+    border: ${p => p.theme.borders.none};
 `;
 
-export const MobNav = styled.div`
-    display: none;
-    @media ${device.tablet} {
-        display: block;
+export const MobAuthList = styled.ul`
+    width: 400px;
+	height: 100%;
+    margin: 0 auto;
+`;
+
+export const MobAuthListItem = styled(AuthListItem)`
+	&:not(:last-child) {
+        @media ${device.mobileOnly} {
+            margin-bottom: ${p => p.theme.space[4]}px;
+        }
+    }
+`;
+
+export const MobAuthTitle = styled(AuthTitle)`
+    align-items: center;
+    font-weight: ${p => p.theme.fontWeights.large};
+    font-size: ${p => p.theme.fontSizes.l};
+`;
+
+export const MobButtonForLogOut = styled(ClassicButton)`
+	display: none;
+	@media ${device.mobileOnly} {
+        display: flex;
+		color: ${p => p.theme.colors.almostDarkGreen};
+		background-color: ${p => p.theme.colors.almostWhite};
     }
 `;

@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import { ClassicButton } from "components/GlobalStyles";
+import { device, ClassicButton  } from "components/GlobalStyles";
 
 export const UserMenuDiv = styled.div`
     display: flex;
     align-items: center;
+    @media ${device.mobileOnly} {
+        flex-direction: column;
+        justify-content: center;
+    }
 `;
 
 export const UserEmail = styled.p`
@@ -17,9 +21,17 @@ export const UserEmail = styled.p`
     &:focus {
         text-shadow: ${p => p.theme.shadows.shadowSecond};
     }
+    @media ${device.mobileOnly} {
+        margin-top: ${p => p.theme.space[4]}px;
+        margin-bottom: ${p => p.theme.space[4]}px;
+    }
 `;
 
 export const ButtonForLogOut = styled(ClassicButton)`
-    color: ${p => p.theme.colors.almostDarkGreen};
-    background-color: ${p => p.theme.colors.almostWhite};
+    display: none;
+    @media ${device.tablet} {
+        display: flex;
+        color: ${p => p.theme.colors.almostDarkGreen};
+        background-color: ${p => p.theme.colors.almostWhite};
+    }
 `;

@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import EmailIcon from '@mui/icons-material/Email';
 import KeyIcon from '@mui/icons-material/Key';
 import PersonIcon from '@mui/icons-material/Person';
@@ -5,8 +6,8 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import SearchIcon from '@mui/icons-material/Search';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import styled from 'styled-components';
 import { Avatar } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { FooterLink } from 'components/Footer/Footer.styled';
@@ -34,6 +35,8 @@ export const VisibilityIconStyle = () => <VisibilityIcon sx={{ fill: "#082911" }
 export const VisibilityOffIconStyle = () => <VisibilityOffIcon sx={{ fill: "#082911" }} />;
 
 export const AvatarStyle = ({ letter, color }) => <Avatar sx={{ width: "38px", height: "38px", marginRight: "10px", bgcolor: color, cursor: "pointer" }}>{letter}</Avatar>;
+
+export const LogoutIconStyle = () => <LogoutIcon sx={{ marginLeft: "5px" }}/>
 
 export const GitHubIconStyle = () =>
     <FooterLink href='https://github.com/pixelboyXL'

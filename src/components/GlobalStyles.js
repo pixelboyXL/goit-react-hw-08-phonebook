@@ -123,6 +123,14 @@ export const AppBarItem = styled.li`
     }
 `;
 
+export const UserAuthWrap = styled.div`
+    display: none;
+    @media ${device.tablet} {
+        display: block;
+        margin-top: ${p => p.theme.space[3]}px;
+    }
+`;
+
 export const NavTitle = styled(NavLink)`
     font-weight: ${p => p.theme.fontWeights.medium};
     font-size: ${p => p.theme.fontSizes.l};
